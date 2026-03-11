@@ -158,22 +158,10 @@
         }
 
     </style>
-    
 </head>
 
 <body>
-    <!-- NAVBAR MEJORADA -->
-    <nav class="navbar navbar-expand-lg navbar-dark px-4">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <!-- LOGO -->
-            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png" alt="logo">
-            Conversor
-        </a>
 
-        <div class="ms-auto">
-            <a class="nav-link text-white" href="#">Inicio</a>
-        </div>
-    </nav>
     <div class="card p-4 p-md-5 converter-card">
         <h2 class="text-center mb-4">💱 Conversor</h2>
 
@@ -221,7 +209,84 @@
                 {{ result }}
             </div>
         {% endif %}
-    <
+    <!-- NAVBAR MEJORADA -->
+    <nav class="navbar navbar-expand-lg navbar-dark px-4">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <!-- LOGO -->
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png" alt="logo">
+            Conversor
+        </a>
+
+        <div class="ms-auto">
+            <a class="nav-link text-white" href="#">Inicio</a>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container main-container">
+
+        <div class="card shadow-lg p-4 converter-card">
+
+            <h2 class="text-center mb-4">💱 Conversor de Divisas</h2>
+
+            <form method="post">
+
+                <div class="row mb-3 align-items-center">
+
+                    <div class="col">
+                        <select name="from_currency" class="form-select">
+                            <option value="EUR">EUR €</option>
+                            <option value="USD">USD $</option>
+                            <option value="GBP">GBP £</option>
+                        </select>
+                    </div>
+
+                    <div class="col-2 text-center">
+                        →
+                    </div>
+
+                    <div class="col">
+                        <select name="to_currency" class="form-select">
+                            <option value="USD">USD $</option>
+                            <option value="EUR">EUR €</option>
+                            <option value="GBP">GBP £</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Cantidad</label>
+                    <input type="number" step="0.01" name="amount"
+                           class="form-control form-control-lg"
+                           placeholder="Introduce cantidad" required>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-primary w-100">
+                            Convertir
+                        </button>
+                    </div>
+
+                    <div class="col-6">
+                        <button type="reset" class="btn btn-danger w-100">
+                            Eliminar
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+            {% if result is not none %}
+                <div class="mt-4 text-center result-box">
+                    {{ result }}
+                </div>
+            {% endif %}
+
+        </div>
+
+    </div>
 
 </body>
 </html>
