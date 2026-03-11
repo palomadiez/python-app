@@ -160,55 +160,7 @@
     </style>
 </head>
 
-<body>
-
-    <div class="card p-4 p-md-5 converter-card">
-        <h2 class="text-center mb-4">💱 Conversor</h2>
-
-        <form method="post">
-            <div class="mb-4">
-                <label class="form-label text-uppercase">Cantidad a enviar</label>
-                <input type="number" step="0.01" name="amount" 
-                       class="form-control form-control-lg" 
-                       placeholder="0.00" required>
-            </div>
-
-            <div class="row g-3 mb-4 align-items-center">
-                <div class="col">
-                    <label class="form-label d-block text-center">De</label>
-                    <select name="from_currency" class="form-select text-center">
-                        <option value="EUR">EUR €</option>
-                        <option value="USD">USD $</option>
-                        <option value="GBP">GBP £</option>
-                    </select>
-                </div>
-                
-                <div class="col-auto mt-4 swap-icon">
-                    ⇄
-                </div>
-
-                <div class="col">
-                    <label class="form-label d-block text-center">A</label>
-                    <select name="to_currency" class="form-select text-center">
-                        <option value="USD">USD $</option>
-                        <option value="EUR">EUR €</option>
-                        <option value="GBP">GBP £</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="d-grid">
-                <button type="submit" class="btn btn-primary btn-lg btn-convert">
-                    Convertir ahora
-                </button>
-            </div>
-        </form>
-
-        {% if result is not none %}
-            <div class="mt-4 text-center result-box">
-                {{ result }}
-            </div>
-        {% endif %}
+<body>        
     <!-- NAVBAR MEJORADA -->
     <nav class="navbar navbar-expand-lg navbar-dark px-4">
         <a class="navbar-brand d-flex align-items-center" href="#">
@@ -264,7 +216,7 @@
 
                 <div class="row mt-3">
                     <div class="col-6">
-                        <button type="submit" class="btn btn-primary w-100">
+                        <button type="submit" class="btn btn-convert w-100">
                             Convertir
                         </button>
                     </div>
